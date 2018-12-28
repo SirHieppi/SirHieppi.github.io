@@ -1,0 +1,41 @@
+.bk{
+	background: black;
+}
+
+.neonSign{
+	background: black;
+	position: fixed;
+/* 	top: 0;
+	left: 0; */
+	z-index: -1;
+/* 	margin: 0, 0, 10, 10;
+	overflow: hidden;
+	margin: -5px -10px -10px -15px;
+	background-size: contain; */
+}
+
+body{
+	border:none;
+	background:black;
+}
+
+.list{
+	opacity: 0.5;
+	transition: height 0.5s;
+	transition: width 0.5s;
+	transition: scale 1s;
+	border: 5px dashed white;
+	margin-left:1000px;
+	position: relative;
+	z-index:1;
+}
+
+.list:hover {
+	opacity: 1;
+	transform: scale(2);
+	z-index:10;
+	/* margin: auto; */
+}
+table {
+	margin-left:750px;
+}
