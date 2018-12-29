@@ -1,9 +1,9 @@
-@keyframes picAnim {
+@keyframes fadeInAnim {
 	from {opacity: 0};
 	to {opacity: 1};
 }
 
-@keyframes opacityAnim {
+@keyframes fadeOutAnim {
 	from {opacity: 1};
 	to {opacity: 0.5};
 }
@@ -23,6 +23,10 @@
 	color: black;
 	font-family: cursive;
 	font-size: 25px;
+}
+
+.welcome {
+	padding-bottom: 600px;
 }
 
 .customFont{
@@ -49,20 +53,6 @@
 
 .rectangle:hover {
 	background: #fffdf9
-}
-
-.square {
-	color: black;
-  height: 100px;
-  width: 100px;
-	padding: 0;
-	transition: 0.3s;
-	opacity: 75%;
-}
-
-.square:hover {
-	box-shadow: 5px 5px 15px gray;
-	/* background: gray */
 }
 
 .circle {
@@ -94,25 +84,26 @@
 
   /* Set a specific height */
   min-height: 500px;
-
+	padding-bottom: 200px;
   /* Create the parallax scrolling effect */
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .circle:hover {
 	box-shadow: 5px 5px 15px gray;
 }
 
 .blackBar {
 	height: 5px;
-  width: 1000px;
+  width: 60%;
 	background-color: black;
 }
 .blackBar2 {
 	height: 5px;
-  width: 1250px;
+  width: 75%;
 	background-color: black;
 }
 
@@ -124,45 +115,15 @@
 	opacity: 100%;
 }
 
-canvas {
-	position: fixed;
-	top: 0;
-	left: 0;
-	z-index: -1;
-}
-
-#bodyBk {
-	position: relative;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	filter: blur(10px);
-	margin: 0, 0, 10, 10;
-	overflow: hidden;
-	margin: -5px -10px -10px -15px;
-	background-size: contain;
-}
-
-#bodyBk2 {
-	position: relative;
-	top: 0;
-	left: 0;
-	z-index: -1;
-	filter: blur(0px);
-	margin: 0, 0, 10, 10;
-	overflow: hidden;
-	margin: -5px -10px -10px -15px;
-	padding-bottom: 250px;
-	animation-name: picAnim;
-	animation-duration: 2s;
-}
-
 .customImg {
 	width: 90%;
 	height: 90%;
 }
 
 .picture {
+	position: absolute;
+	animation-name: fadeInAnim;
+	animation-duration: 5s;
 	position: relative;
 	transition: 0.7s;
 }
@@ -171,122 +132,35 @@ canvas {
 	opacity: 0.5;
 }
 
-#image {
-	opacity: 0.5;
-	transition: height 0.5s;
-	transition: width 0.5s;
-	transition: scale 1s;
-	border: 5px dashed white;
-	margin: 20px;
-	position: relative;
-	z-index:1;
+.photoTable {
+	padding-top: 100px;
+	padding-bottom: 200px;
 }
 
-#image:hover {
-	opacity: 1;
-	transform: scale(2);
-	z-index:10;
-	/* margin: auto; */
+#photography {
+
 }
 
-/* #imgCustom:hover {
+#coding {
 
-	width: 40%;
-	height: 40%;
-	transform: scale(2);
+}
+
+#gamedev {
+
+}
+
+a { color:red } /* Globally */
+
+/* Each state */
+
+a:visited { text-decoration: none; color:black; }
+a:hover { text-decoration: none; color:blue; }
+a:focus { text-decoration: none; color:yellow; }
+a:hover, a:active { text-decoration: none; color:black }
+
+/* canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: -1;
 } */
-
-#imgCustom {
-	transition: width 1s;
-	transition: height 1s;
-	/* animation: picAnim 2s ease-in-out infinite; */
-	animation-name: picAnim;
-	animation-duration: 2s;
-
-}
-
-#grad1 {
-	background-image:
-		linear-gradient(
-			powderblue, white
-		);
-
-}
-
-#grad2 {
-	background-image:
-		linear-gradient(
-			to right, lightpink, lightpink 40%,
-			#ffdbdb 50%, lightpink 60%, lightpink
-		);
-}
-
-#centerShadow {
-	box-shadow: 3px 0px 10px gray;
-}
-
-#links {
-	background:#a8c9ff;
-	font-size: 25px;
-}
-
-#links2 {
-	background:powderblue;
-	font-size: 25px;
-	opacity: 0.7;
-}
-
-/* #roundCorners {
-	border-radius: 25px;
-	border: 5px solid powderblue;
-	width: 350px;
-	height: 50px;
-} */
-
-/* Style The Dropdown Button */
-.dropbtn {
-    background-color: white;
-    color: Black;
-    padding: 16px;
-    font-size: 16px;
-	font-family: cursive;
-    border: none;
-    cursor: pointer;
-}
-
-/* The container <div> - needed to position the dropdown content */
-.dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-/* Dropdown Content (Hidden by Default) */
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: white;
-    min-width: 180px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-}
-
-/* Links inside the dropdown */
-.dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-}
-
-/* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #e5e5e5}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {
-    background-color: #e5e5e5;
-}
